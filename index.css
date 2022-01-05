@@ -11,6 +11,7 @@
     --main-background: #352b4c;
     --main-text-color: #cbcbcb;
     --fake-image-background: #0e061a;
+    --theme-changer-background: #efe9f6;
 }
 
 * {
@@ -132,6 +133,26 @@ body {
     font-size: 16px;
     color: var(--footer-text-color);
     font-weight: 800;
+}
+
+.theme-changer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--theme-changer-background);
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.light-theme .dark-theme-changer {
+    display: none;
+}
+
+.dark-theme .light-theme-changer {
+    display: none;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */

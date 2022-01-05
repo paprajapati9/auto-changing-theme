@@ -13,6 +13,7 @@ let themeSettings = {
         main_background : '#ffffff',
         main_text_color : '#000000',
         fake_image_background : '#aaaaaa',
+        theme_changer_background : '#560d9e',
     },
     darkTheme : {
         // primary color
@@ -27,6 +28,7 @@ let themeSettings = {
         main_background : '#352b4c',
         main_text_color : '#cbcbcb',
         fake_image_background : '#0e061a',
+        theme_changer_background : '#efe9f6',
     }
 }
 
@@ -36,6 +38,7 @@ window.addEventListener("load", function() {
     if(currentTime >= 6 && currentTime < 18) {
         // Day
         console.log("Day");
+        document.body.classList.add("light-theme");
         Object.keys(themeSettings.lightTheme).forEach(function(key) {
             let rootVarKey = key.replace(/_/g, "-");;
             document.documentElement.style.setProperty(`--${rootVarKey}`, themeSettings.lightTheme[key]);
@@ -43,9 +46,32 @@ window.addEventListener("load", function() {
     }else {
         // Night
         console.log("Night");
+        document.body.classList.add("dark-theme");
         Object.keys(themeSettings.darkTheme).forEach(function(key) {
             let rootVarKey = key.replace(/_/g, "-");;
             document.documentElement.style.setProperty(`--${rootVarKey}`, themeSettings.darkTheme[key]);
         });
     }
+
+    let themeChanger = document.querySelector(".theme-changer");
+    if(themeChanger) {
+        themeChanger.addEventListener("click", function() {
+            if(document.body.classList.contains("light-theme")) {
+                document.body.classList.remove("light-theme");
+                document.body.classList.add("dark-theme");
+                Object.keys(themeSettings.darkTheme).forEach(function(key) {
+                    let rootVarKey = key.replace(/_/g, "-");;
+                    document.documentElement.style.setProperty(`--${rootVarKey}`, themeSettings.darkTheme[key]);
+                });
+            }else {
+                document.body.classList.remove("dark-theme");
+                document.body.classList.add("light-theme");
+                Object.keys(themeSettings.lightTheme).forEach(function(key) {
+                    let rootVarKey = key.replace(/_/g, "-");;
+                    document.documentElement.style.setProperty(`--${rootVarKey}`, themeSettings.lightTheme[key]);
+                });
+            }
+        })
+    }
 })
+
