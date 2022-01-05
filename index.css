@@ -1,11 +1,12 @@
 :root {
     /* primary color */
-    --header_background: #8818ea;
-    --header_text_color: #fefeff;
-    --navbar_background: #5f0a9d;
-    --navbar_text_color: #fefeff;
-    --footer_background: #5ed1e3;
-    --footer_text_color: #3f2675;
+    --header-background: #8818ea;
+    --header-text-color: #fefeff;
+    --navbar-background: #5f0a9d;
+    --navbar-text-color: #fefeff;
+    --footer-background: #5ed1e3;
+    --footer-text-color: #3f2675;
+    --sidebar-background: #886fc136;
 }
 
 * {
@@ -22,8 +23,8 @@ body {
 .header {
     padding: 80px;
     text-align: center;
-    background: var(--header_background);
-    color: var(--header_text_color);
+    background: var(--header-background);
+    color: var(--header-text-color);
 }
 
 /* Increase the font size of the heading */
@@ -34,14 +35,14 @@ body {
 /* Style the top navigation bar */
 .navbar {
     overflow: hidden;
-    background-color: var(--navbar_background);
+    background-color: var(--navbar-background);
 }
 
 /* Style the navigation bar links */
 .navbar a {
     float: left;
     display: block;
-    color: var(--navbar_text_color);
+    color: var(--navbar-text-color);
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
@@ -71,7 +72,7 @@ body {
 .side {
     -ms-flex: 30%; /* IE10 */
     flex: 30%;
-    background-color: #f1f1f1;
+    background-color: var(--sidebar-background);
     padding: 20px;
 }
 
@@ -94,7 +95,7 @@ body {
 .footer {
     padding: 60px 20px 40px;
     text-align: center;
-    background: var(--footer_background);
+    background: var(--footer-background);
 }
 
 .footer-column-container {
@@ -115,7 +116,7 @@ body {
 
 
 .footer-column a{
-    color: var(--footer_text_color);
+    color: var(--footer-text-color);
     text-decoration: none;
     font-weight: 800;
 }
@@ -123,7 +124,7 @@ body {
 .copyright-text{
     padding-top: 20px;
     font-size: 16px;
-    color: var(--footer_text_color);
+    color: var(--footer-text-color);
     font-weight: 800;
 }
 
